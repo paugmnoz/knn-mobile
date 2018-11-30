@@ -6,6 +6,7 @@ import DeviceMotion from 'react-device-motion';
 import Slider from './components/Slider/Slider';
 import { store } from './store/DataStore';
 import HeaderMobile from './components/HeaderMobile/HeaderMobile';
+import Fade from 'react-reveal/Fade';
 
  class App extends Component {
 
@@ -13,7 +14,11 @@ import HeaderMobile from './components/HeaderMobile/HeaderMobile';
     
     return (
       <div className="App">
+                  <Fade>
+
         <Home data = {store.data}></Home>
+        </Fade>
+
       </div>
     );
   }

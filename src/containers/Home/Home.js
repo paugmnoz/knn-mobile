@@ -4,7 +4,12 @@ import {observable} from 'mobx'
 import { store } from '../../store/DataStore';
 import Slider from '../../components/Slider/Slider';
 import logo from '../../logo.png'
- 
+import Zoom from 'react-reveal/Zoom';
+import Slide from 'react-reveal/Slide';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
+import Fade from 'react-reveal/Fade';
+
+
 var classNames = require('classnames');
 
 @observer class Home extends Component {
@@ -25,6 +30,12 @@ var classNames = require('classnames');
         this.tempusers = store.data
         this.handleButtonPress = this.handleButtonPress.bind(this)
         this.handleButtonRelease = this.handleButtonRelease.bind(this)
+   
+        this.groupProps = {
+            appear: true,
+            enter: true,
+            exit: false,
+          };
     }
   
     handleSquad(e) {
@@ -58,6 +69,7 @@ var classNames = require('classnames');
           });
           
        return  <section className='contApp'> 
+
            <div className='mbheader'  >
            <img id='logo' src={logo}></img>
 
@@ -81,9 +93,10 @@ var classNames = require('classnames');
         <section id='head' className='planrecomendation'>
         <h1 className='title dark'>Escoge el parche</h1>
             <div className='people abcd'>
+
                 {  
                     this.tempusers.map( (e, i) => {
-                      return <img className={imgClass} id={i} src={require('../../components/GenViz/photos/' + e.foto)} 
+                      return  <img className={imgClass} id={i} src={require('../../components/GenViz/photos/' + e.foto)} 
                       onClick={(e) => {     this.imgID(e.target.id)
 
                         this.tempusers.splice(i,1); }}
@@ -101,35 +114,45 @@ var classNames = require('classnames');
                     onTouchEnd= { (e) => {
                         this.pressed = false;
                     }}
-                    ></img>    
+                    ></img> 
                 }) 
-            }                
+            }      
+          
                 
             </div>
-      
+
+            <Zoom>
+
             <div id='squadplann' className='selectedsquad'>
+            <TransitionGroup {...this.groupProps}  className='newparent'>
+
             {
                 store.squadlist.map( (e,i) => {
-                    return <div className='childsquad'> 
+                    return <Fade  ><div  className='childsquad'> 
                                                 <img className='selectedSquadImg' id={i}  alt={e.nombre} src={require('../../components/GenViz/photos/' + e.foto)}></img>
                             <p>{e.nombre}</p>
-                    </div>
+                    </div> </Fade>  
                 })
             }
+                      </TransitionGroup>
+
             </div>
+            </Zoom>
+
             <div  className='abcd btns'>
-            <button className='mbtn defaultbtn'  onClick={(e) => {
+            <button className='mbtn planbtn defaultbtn'  onClick={(e) => {
              store.squadPlan();
              this.frase1 = store.finalplanOne;
              this.frase2 = store.finalplanTwo;
              this.frase3 = store.finalplanThree;
              this.squad = [];
-             window.location.href='#squadplann'
-
+             window.location.href='#planresults'
+        
          }}> Plan</button>
 
-        
             </div>
+        
+            <Slide left>
         <div id='planresults' className='abcd'>
             <div className='plandiv uno'>
             <h1 className='h1White  planh1 tleft'>La mejor opción es</h1>
@@ -144,6 +167,8 @@ var classNames = require('classnames');
                 <p className='dark tleft'>{this.frase3}</p>
             </div>
             </div>
+            </Slide>
+            <Slider>Hello</Slider>
         </section>
        </section>
        

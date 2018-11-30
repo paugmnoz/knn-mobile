@@ -68,6 +68,15 @@ html {
   width: 100%;
 }
 
+.mbheader {
+  box-shadow: 4px 4px 8px #cccccc;
+
+}
+
+.planbtn {
+  margin: 1rem 0;
+}
+
 
 .child {
   
@@ -174,7 +183,7 @@ button {
   background-color: #DBE2B9;
 }
 
-.selectedsquad  {
+.newparent  {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -187,6 +196,7 @@ button {
   width: 40%;
   order: 0;
   flex: 0 1 auto;
+  margin: 3px;
   align-self: auto;
   display: flex;
   flex-direction: column;
@@ -260,6 +270,8 @@ button {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  padding-top: 1rem;
+
 }
 
 .btns {
@@ -282,6 +294,8 @@ button {
   border-radius: 15px;
   margin-bottom: 30px;
   padding: 20px 30px 0 30px;
+  box-shadow: 4px 4px 8px #cccccc;
+
 }
 
 .h1White {
@@ -336,6 +350,9 @@ button {
   top: 0;
   left: 0;
   border-radius: 5px;
+  background-color: white;
+  box-shadow: 4px 4px 8px #cccccc;
+
 }
 
 .bubble {
