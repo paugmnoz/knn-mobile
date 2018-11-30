@@ -77,7 +77,6 @@ var classNames = require('classnames');
          this.squad = [];
          store.tempsquad = this.squad;
          store.squadlist = [];
-         window.location.href='#squadplann'
          }}> Reset</button>        </div>
         <section id='head' className='planrecomendation'>
         <h1 className='title dark'>Escoge el parche</h1>
@@ -125,6 +124,8 @@ var classNames = require('classnames');
              this.frase2 = store.finalplanTwo;
              this.frase3 = store.finalplanThree;
              this.squad = [];
+             window.location.href='#squadplann'
+
          }}> Plan</button>
 
         
