@@ -1,0 +1,18 @@
+.page1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+.page2 {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: violet;
+}
