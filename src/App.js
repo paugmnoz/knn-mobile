@@ -5,6 +5,7 @@ import MobileHome from './containers/MobileHome/MobileHome';
 import DeviceMotion from 'react-device-motion';
 import Slider from './components/Slider/Slider';
 import { store } from './store/DataStore';
+import HeaderMobile from './components/HeaderMobile/HeaderMobile';
 
  class App extends Component {
 

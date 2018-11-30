@@ -21,8 +21,9 @@ constructor(props){
 
 }
  return (
-      <div className='header' >
-      
+      <div className='mbheader' >
+            <img></img>
+            <button>Reset</button>
         </div>
                 )}
             }

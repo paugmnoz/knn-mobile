@@ -4,6 +4,10 @@ import svgdataset from '../json/svgdata.json';
 
 class DataStore {
 
+    @observable startX = 0
+    @observable touchX = 0
+    @observable changeX = 0
+
     @observable person1 = ''
     @observable person2 = ''
     @observable tempsquad = [];
